@@ -1,0 +1,233 @@
+schema_version: 1.0.0
+
+fields:
+  - name: dataset_title
+    type: string
+
+  - name: dataset_description
+    type: string
+
+  - name: therapy_area
+    type: string
+    allowed_values:
+      - oncology
+      - pain
+
+  - name: data_ownership
+    type: string
+    allowed_values:
+      - public
+      - licensed
+      - internal
+
+  - name: cohort_count
+    type: integer
+
+  - name: n_samples_total
+    type: integer
+
+  - name: n_individuals_total
+    type: integer
+
+  - name: external_accessions
+    type: string
+
+  - name: sampo_id
+    type: string
+
+  - name: elwis_id
+    type: string
+
+  - name: invivolab_id
+    type: string
+
+  - name: bioinformatics_contact
+    type: string
+
+  - name: laboratory_contact
+    type: string
+
+  - name: therapy_area_contact
+    type: string
+
+  - name: organism
+    type: string
+    allowed_values:
+      - human
+      - mouse
+    multi: true
+
+  - name: indication
+    type: string
+    allowed_values:
+      - breast_carcinoma
+      - colorectal_adenocarcinoma
+      - non_small_cell_lung_carcinoma
+      - small_cell_lung_carcinoma
+      - head_and_neck_squamous_cell_carcinoma
+      - hepatocellular_carcinoma
+      - cholangiocarcinoma
+      - pancreatic_ductal_adenocarcinoma
+      - ovarian_carcinoma
+      - prostate_adenocarcinoma
+      - melanoma
+      - neuroblastoma
+      - acute_myeloid_leukemia
+      - b_cell_acute_lymphoblastic_leukemia
+      - diffuse_large_b_cell_lymphoma
+      - multiple_myeloma
+      - thyroid_carcinoma
+      - glioma
+      - neuroendocrine_tumor
+      - neuropathic_pain
+      - inflammatory_pain
+      - chronic_pain
+      - acute_pain
+      - cancer_related_pain
+      - chemotherapy_induced_peripheral_neuropathy
+      - diabetic_peripheral_neuropathy
+      - postherpetic_neuralgia
+      - complex_regional_pain_syndrome
+      - fibromyalgia
+      - migraine
+      - osteoarthritis_pain
+      - rheumatoid_arthritis_pain
+      - low_back_pain
+      - post_surgical_pain
+      - other
+    multi: true
+
+  - name: disease_context
+    type: string
+    allowed_values:
+      - tumor
+      - normal
+      - control
+      - treated
+    multi: true
+
+  - name: tissue_origin
+    type: string
+    allowed_values:
+      - lung
+      - breast
+      - brain
+      - drg
+      - spinal_cord
+      - pbmc
+      - tumor_tissue
+      - other
+    multi: true
+
+  - name: sample_biological_origin
+    type: string
+    allowed_values:
+      - primary_tissue
+      - primary_cells
+      - cell_line
+      - organoid
+    multi: true
+
+  - name: biological_model_type
+    type: string
+    allowed_values:
+      - xenograft
+      - gemm
+      - humanized
+      - not_applicable
+    multi: true
+
+  - name: experimental_system
+    type: string
+    allowed_values:
+      - in_vitro
+      - in_vivo
+      - ex_vivo
+      - in_silico
+
+  - name: donor_life_status
+    type: string
+    allowed_values:
+      - alive
+      - dead
+      - unknown
+      - not_applicable
+
+  - name: patients_identification
+    type: string
+    allowed_values:
+      - anonymous
+      - pseudoanonymous
+      - identified
+      - not_applicable
+
+  - name: geographic_location
+    type: string
+    allowed_values:
+      - eu_eea
+      - uk
+      - usa
+      - china
+      - canada
+      - rest_of_world
+
+  - name: omics_modalities
+    type: string
+    allowed_values:
+      - genomics
+      - transcriptomics
+      - proteomics
+      - metabolomics
+      - epigenomics
+    multi: true
+
+  - name: omics_assay_type
+    type: string
+    allowed_values:
+      - whole_genome_sequencing
+      - whole_exome_sequencing
+      - total_rna_sequencing
+      - mrna_sequencing
+      - single_cell_rna_sequencing
+      - atac_sequencing
+      - chip_sequencing
+    multi: true
+
+  - name: experimental_design
+    type: string
+    allowed_values:
+      - preclinical
+      - case_control
+      - longitudinal
+      - interventional
+      - cross_sectional
+    multi: true
+
+  - name: data_level
+    type: string
+    allowed_values:
+      - per_individual
+      - summary_statistics
+    multi: true
+
+  - name: data_processing_level
+    type: string
+    allowed_values:
+      - raw
+      - processed
+      - model_output
+      - summary_statistics
+    multi: true
+
+  - name: reference_genome
+    type: string
+    allowed_values:
+      - grch38
+      - grch37
+      - grcm39
+      - grcm38
+      - not_applicable
+    multi: true
+
+  - name: data_sensitivity
+    type: string

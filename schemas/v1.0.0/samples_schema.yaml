@@ -1,0 +1,102 @@
+schema_version: 1.0.0
+
+fields:
+  - name: sample_id
+    type: string
+
+  - name: batch_id
+    type: string
+
+  - name: organism
+    type: string
+    allowed_values:
+      - human
+      - mouse
+
+  - name: sample_biological_origin
+    type: string
+    allowed_values:
+      - primary_tissue
+      - primary_cells
+      - cell_line
+      - organoid
+
+  - name: tissue_origin
+    type: string
+    allowed_values:
+      - lung
+      - breast
+      - brain
+      - drg
+      - spinal_cord
+      - pbmc
+      - tumor_tissue
+      - other
+
+  - name: indication
+    type: string
+    allowed_values:
+      - breast_carcinoma
+      - colorectal_adenocarcinoma
+      - non_small_cell_lung_carcinoma
+      - small_cell_lung_carcinoma
+      - head_and_neck_squamous_cell_carcinoma
+      - hepatocellular_carcinoma
+      - cholangiocarcinoma
+      - pancreatic_ductal_adenocarcinoma
+      - ovarian_carcinoma
+      - prostate_adenocarcinoma
+      - melanoma
+      - neuroblastoma
+      - acute_myeloid_leukemia
+      - b_cell_acute_lymphoblastic_leukemia
+      - diffuse_large_b_cell_lymphoma
+      - multiple_myeloma
+      - thyroid_carcinoma
+      - glioma
+      - neuroendocrine_tumor
+      - neuropathic_pain
+      - inflammatory_pain
+      - chronic_pain
+      - acute_pain
+      - cancer_related_pain
+      - chemotherapy_induced_peripheral_neuropathy
+      - diabetic_peripheral_neuropathy
+      - postherpetic_neuralgia
+      - complex_regional_pain_syndrome
+      - fibromyalgia
+      - migraine
+      - osteoarthritis_pain
+      - rheumatoid_arthritis_pain
+      - low_back_pain
+      - post_surgical_pain
+      - other
+
+  - name: biological_model_type
+    type: string
+    allowed_values:
+      - xenograft
+      - gemm
+      - humanized
+      - not_applicable
+
+  - name: treatment_group
+    type: string
+    allowed_values:
+      - control
+      - treated
+      - other
+
+  - name: omics_assay_type
+    type: string
+    allowed_values:
+      - whole_genome_sequencing
+      - whole_exome_sequencing
+      - total_rna_sequencing
+      - mrna_sequencing
+      - single_cell_rna_sequencing
+      - atac_sequencing
+      - chip_sequencing
+
+  - name: biological_replicate_number
+    type: integer

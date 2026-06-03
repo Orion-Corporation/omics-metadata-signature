@@ -1,0 +1,11 @@
+schema_version: 1.0.0
+
+fields:
+  - name: results_path
+    type: string
+
+  - name: bioinformatics_pipeline
+    type: string
+
+  - name: pipeline_version
+    type: string

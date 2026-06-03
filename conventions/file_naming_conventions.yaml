@@ -1,0 +1,6 @@
+schema_version: 1.0.0
+
+metadata_file_names:
+  raw_data: raw-data.yaml
+  samples: samples.yaml
+  processed_data: processed-data.yaml
