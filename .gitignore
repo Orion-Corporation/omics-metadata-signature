@@ -1,3 +1,14 @@
 TO-DO.txt
 
 metadata_schema.py
+
+.venv/
+
+/build/
+/dist/
+src/omics_metadata_signature.egg-info/
+
+#pycache
+tests/__pycache__/
+src/omics_metadata_signature/__pycache__/
+

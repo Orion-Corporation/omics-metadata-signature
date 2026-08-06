@@ -35,6 +35,35 @@ metadata files generated from these schemas:
 - `samples.yaml`
 - `processed-data.yaml`
 
+## Python package usage
+
+Use `load_latest_schemas()` to retrieve all schemas shipped in the `latest/`
+directory of the installed package. This avoids coupling consumers to the
+underlying schema file names.
+
+```python
+from omics_metadata_signature import load_latest_schemas
+
+schemas = load_latest_schemas()
+samples_schema = schemas["samples"]
+raw_data_schema = schemas["raw_data"]
+processed_data_schema = schemas["processed_data"]
+```
+
+The mapping keys are derived by removing the `_schema.yaml` suffix and changing
+hyphens to underscores. Each value is the parsed YAML document as a Python
+dictionary.
+
+Load the canonical metadata file names without referring to the conventions
+file directly:
+
+```python
+from omics_metadata_signature import load_metadata_file_names
+
+metadata_file_names = load_metadata_file_names()
+samples_file_name = metadata_file_names["samples"]  # "samples.yaml"
+```
+
 ## Schema Format
 
 Each schema file contains a `schema_version` and a list of `fields` describing
