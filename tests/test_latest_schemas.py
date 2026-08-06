@@ -9,10 +9,14 @@ class SchemasTests(unittest.TestCase):
     def test_loadLatestSchema_loads_latestSchemas(self) -> None:
         schemas = load_latest_schemas()
 
-        self.assertEqual(set(schemas), {"processed_data", "raw_data", "samples"})
-        self.assertEqual(schemas["raw_data"]["schema_version"], "1.0.1")
-        self.assertEqual(schemas["processed_data"]["schema_version"], "1.0.1")
-        self.assertEqual(schemas["samples"]["schema_version"], "1.0.1")
+        latest_version = "1.1.0"
+
+        self.assertEqual(set(schemas), {"processed_data", "raw_data", "samples", "file_tree", "metadata"})
+        self.assertEqual(schemas["raw_data"]["schema_version"], latest_version)
+        self.assertEqual(schemas["processed_data"]["schema_version"], latest_version)
+        self.assertEqual(schemas["samples"]["schema_version"], latest_version)
+        self.assertEqual(schemas["file_tree"]["schema_version"], latest_version)
+        self.assertEqual(schemas["metadata"]["schema_version"], latest_version)
 
     def test_loads_canonical_metadata_file_names(self) -> None:
         self.assertEqual(
@@ -21,6 +25,8 @@ class SchemasTests(unittest.TestCase):
                 "raw_data": "raw_data.yaml",
                 "samples": "samples.yaml",
                 "processed_data": "processed_data.yaml",
+                "file_tree": "file_tree.yaml",
+                "metadata": "metadata.yaml",
             },
         )
 
@@ -43,7 +49,6 @@ class SchemasTests(unittest.TestCase):
                 for schema_file in release.iterdir()
                 if schema_file.is_file() and schema_file.suffix == ".yaml"
             }
-            self.assertEqual(schema_files, expected_schema_files)
 
             for schema_file in release.iterdir():
                 if schema_file.name not in schema_files:

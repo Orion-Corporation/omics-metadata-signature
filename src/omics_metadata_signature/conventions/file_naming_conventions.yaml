@@ -2,3 +2,5 @@ metadata_file_names:
   raw_data: raw_data.yaml
   samples: samples.yaml
   processed_data: processed_data.yaml
+  metadata: metadata.yaml
+  file_tree: file_tree.yaml

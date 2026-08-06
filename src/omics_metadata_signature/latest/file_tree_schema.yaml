@@ -1,0 +1,23 @@
+schema_version: 1.1.0
+
+fields:
+  - name: snapshot_timestamp
+    type: timestamp
+
+  - name: project_folder
+    type: string
+
+  - name: relative_path
+    type: string
+
+  - name: file_name
+    type: string
+
+  - name: entry_type
+    type: string
+
+  - name: size_bytes
+    type: integer
+
+  - name: modified_at
+    type: timestamp
