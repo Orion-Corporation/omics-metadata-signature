@@ -9,7 +9,7 @@ class SchemasTests(unittest.TestCase):
     def test_loadLatestSchema_loads_latestSchemas(self) -> None:
         schemas = load_latest_schemas()
 
-        latest_version = "1.1.0"
+        latest_version = "1.1.1"
 
         self.assertEqual(set(schemas), {"processed_data", "raw_data", "samples", "file_tree", "metadata"})
         self.assertEqual(schemas["raw_data"]["schema_version"], latest_version)
