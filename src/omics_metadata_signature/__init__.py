@@ -6,7 +6,7 @@ from typing import Any
 
 import yaml
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 
 def schema_path(version: str, filename: str):
